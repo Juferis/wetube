@@ -3,12 +3,11 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { userRouter } from "./router";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+import globalRouter from "./routers/globalRouter";
+import routes from "./routes";
 const app = express();
-
-const handleHome = (req, res) => res.send("Hello from home");
-
-const handleProfile = (req, res) => res.send("You are on my profile");
 
 // middleWare
 app.use(bodyParser()); // from에서 받아온 정보를 서버에 맞는 형태로 저장 할 수 있게 변환
@@ -17,10 +16,8 @@ app.use(bodyParser()); // from에서 받아온 정보를 서버에 맞는 형태
 app.use(helmet()); // security
 app.use(morgan("dev")); // logger
 
-app.get("/", handleHome);
-
-app.get("/profile", handleProfile);
-
-app.use("/user", userRouter); // use는 누군가 /user에 접속하면 라우터의 기능들을 사용하겠다는 의미
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter); // use는 누군가 /user에 접속하면 라우터의 기능들을 사용하겠다는 의미
+app.use(routes.videos, videoRouter);
 
 export default app;
