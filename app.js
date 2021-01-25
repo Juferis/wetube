@@ -1,21 +1,24 @@
 import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
-import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import { localsMiddleware } from "./middlewares";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 const app = express();
 
+app.use(helmet()); // security
 app.set("view engine", "pug");
 // middleWare
-app.use(bodyParser()); // from에서 받아온 정보를 서버에 맞는 형태로 저장 할 수 있게 변환
-// app.use(cookieParser.json());
-// app.use(cookieParser.urlencoded({ extended: true })); // remember user info
-app.use(helmet()); // security
+app.use(cookieParser()); // from에서 받아온 정보를 서버에 맞는 형태로 저장 할 수 있게 변환
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); // remember user info
 app.use(morgan("dev")); // logger
+
+app.use(localsMiddleware); // local 변수를 global 변수로 만들어 사용가능하게
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter); // use는 누군가 /user에 접속하면 라우터의 기능들을 사용하겠다는 의미
