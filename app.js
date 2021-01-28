@@ -10,7 +10,7 @@ import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 const app = express();
 
-app.use(helmet()); // security
+app.use(helmet({ contentSecurityPolicy: false })); // security
 app.set("view engine", "pug");
 // middleWare
 app.use(cookieParser()); // from에서 받아온 정보를 서버에 맞는 형태로 저장 할 수 있게 변환
