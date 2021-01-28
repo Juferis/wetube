@@ -7,16 +7,16 @@ const SEARCH = "/search";
 
 // Users
 const USERS = "/users";
-const USER_DETAIL = "/users/:id"; // express가 자동으로 변하는 값이라는 것을 파악
-const EDIT_PROFILE = "/users/edit-profile";
-const CHANGE_PASSWORD = "/users/change-password";
+const USER_DETAIL = "/:id"; // express가 자동으로 변하는 값이라는 것을 파악
+const EDIT_PROFILE = "/edit-profile";
+const CHANGE_PASSWORD = "/change-password";
 
 // Videos
 const VIDOES = "/videos";
-const UPLOAD = "/videos/upload";
-const VIDEO_DETAIL = "/videos/:id";
-const VIDEO_EDIT = "/videos/:id/edit";
-const VIDEO_DELETE = "/videos/:id/delete";
+const UPLOAD = "/upload";
+const VIDEO_DETAIL = "/:id";
+const VIDEO_EDIT = "/:id/edit";
+const VIDEO_DELETE = "/:id/delete";
 
 const routes = {
   home: HOME,
