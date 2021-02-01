@@ -1,54 +1,16 @@
-export const videos = [
-  {
-    id: 321234,
-    title: "Video Awesome",
-    description: "This is something",
-    views: 26,
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-    creator: {
-      id: 321312,
-      name: "Hyun",
-      email: "hyun@jin.com",
-    },
-  },
-  {
-    id: 123123,
-    title: "Video Super",
-    description: "This is something",
-    views: 25,
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-    creator: {
-      id: 321312,
-      name: "Hyun",
-      email: "hyun@jin.com",
-    },
-  },
-  {
-    id: 321321,
-    title: "Video Nice",
-    description: "This is something",
-    views: 24,
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-    creator: {
-      id: 321312,
-      name: "Hyun",
-      email: "hyun@jin.com",
-    },
-  },
-  {
-    id: 4444,
-    title: "Video Good",
-    description: "This is something",
-    views: 26,
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-    creator: {
-      id: 321312,
-      name: "Hyun",
-      email: "hyun@jin.com",
-    },
-  },
-];
+import mongoose from "mongoose";
+
+// mongodb://localhost:포트번호/DataBase이름 포트번호는 wsl에 mongod 치면 나옴
+mongoose.connect("mongodb://localhost:27017/we-tube", {
+  useNewUrlParser: true, //새 버전엔 기본적으로 되어 있지만 해두는게 좋다
+  useFindAndModify: false,
+});
+
+const db = mongoose.connection;
+
+const handleOpen = () => console.log("✅ Connected to DB");
+const handleError = (error) =>
+  console.log(`❌ Error on DB Connection:${error}`);
+
+db.once("open", handleOpen);
+db.on("error", handleError);
