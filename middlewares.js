@@ -1,5 +1,7 @@
+import multer from "multer"; //multer은 업로드한 파일을 자동으로 변환해 준다
 import routes from "./routes";
 
+const multerVideo = multer({ dest: "uploads/videos/" });
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
@@ -9,3 +11,5 @@ export const localsMiddleware = (req, res, next) => {
   };
   next();
 };
+
+export const uploadVideo = multerVideo.single("videoFile"); //하나의 파일만 업로드 가능
