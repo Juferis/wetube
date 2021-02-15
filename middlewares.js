@@ -2,10 +2,11 @@ import multer from "multer"; //multer은 업로드한 파일을 자동으로 변
 import routes from "./routes";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
+const multerAvatar = multer({ dest: "uploads/avatars/" });
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = req.user || {};
+  res.locals.loggedUser = req.user || null;
   next();
 };
 
@@ -28,3 +29,4 @@ export const onlyPrivate = (req, res, next) => {
 };
 
 export const uploadVideo = multerVideo.single("videoFile"); //하나의 파일만 업로드 가능
+export const uploadAvatar = multerAvatar.single("avatar");

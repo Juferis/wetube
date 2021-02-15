@@ -2,8 +2,8 @@ import dotenv from "dotenv";
 import "./db";
 import app from "./app";
 //.env파일 안에 있는 정보를 가져온다
-dotenv.config();
 
+dotenv.config();
 import "./models/Video";
 import "./models/User";
 import "./models/Comment";

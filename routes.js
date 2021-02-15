@@ -10,6 +10,7 @@ const USERS = "/users";
 const USER_DETAIL = "/:id"; // express가 자동으로 변하는 값이라는 것을 파악
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
+const ME = "/me";
 
 // Videos
 const VIDOES = "/videos";
@@ -17,6 +18,10 @@ const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const VIDEO_EDIT = "/:id/edit";
 const VIDEO_DELETE = "/:id/delete";
+
+// Github
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
 
 const routes = {
   home: HOME,
@@ -57,6 +62,9 @@ const routes = {
       return VIDEO_DELETE;
     }
   },
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
+  me: ME,
 };
 
 export default routes;
