@@ -11,6 +11,7 @@ import { localsMiddleware } from "./middlewares";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import apiRouter from "./routers/apiRouter";
 import routes from "./routes";
 
 import "./passport";
@@ -44,5 +45,6 @@ app.use(localsMiddleware); // local 변수를 global 변수로 만들어 사용�
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter); // use는 누군가 /user에 접속하면 라우터의 기능들을 사용하겠다는 의미
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
