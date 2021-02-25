@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
+import path from "path";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import userRouter from "./routers/userRouter";
@@ -22,9 +23,11 @@ const CookieStore = MongoStore(session); // 저장한 쿠키가 누구의 쿠키
 
 app.use(helmet({ contentSecurityPolicy: false })); // security
 app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "views"));
 //middleware
-app.use("/uploads", express.static("uploads")); //누군가 uploads에 접근하면 디렉터리에서 파일을 보내준다(영상 재생가능)
-app.use("/static", express.static("static"));
+//누군가 uploads에 접근하면 디렉터리에서 파일을 보내준다(영상 재생가능)
+// app.use("/uploads", express.static("uploads")); S3 사용으로 이 코드는 사용 안함
+app.use("/static", express.static(path.join(__dirname, "static")));
 app.use(cookieParser()); // from에서 받아온 정보를 서버에 맞는 형태로 저장 할 수 있게 변환
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); // remember user info
