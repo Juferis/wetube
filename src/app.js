@@ -7,6 +7,7 @@ import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
 import path from "path";
+import flash from "express-flash";
 import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import userRouter from "./routers/userRouter";
@@ -40,6 +41,8 @@ app.use(
     store: new CookieStore({ mongooseConnection: mongoose.connection }), //쿠키 스토어와 몽고DB를 연결해야한다
   })
 );
+app.use(flash());
+
 app.use(passport.initialize());
 app.use(passport.session());
 

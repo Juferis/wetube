@@ -21,6 +21,7 @@
     "css-loader": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
     "express-session": "^1.17.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "helmet": "^4.3.1",
@@ -47,9 +48,8 @@
     "build:server": "babel src --out-dir build --ignore 'src/assets','src/static','src/webpack.config.js'",
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prebuild": "rm -rf build",
-    "start": "node build/init.js",
-    "prestart": "npm run build"
+    "tunnel": "lt --port 4000",
+    "start": "PRODUCTION=true node build/init.js"
   },
   "devDependencies": {
     "eslint": "^7.19.0",
@@ -57,7 +57,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
-    "mini-css-extract-plugin": "^1.3.5",
+    "mini-css-extract-plugin": "^1.3.8",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1"
   }
