@@ -5,13 +5,10 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // mongodb://localhost:포트번호/DataBase이름 포트번호는 wsl에 mongod 치면 나옴
-mongoose.connect(
-  process.env.PRODUCTION ? process.env.MONGO_URL_PROD : process.env.MONGO_URL,
-  {
-    useNewUrlParser: true, //새 버전엔 기본적으로 되어 있지만 해두는게 좋다
-    useFindAndModify: false,
-  }
-);
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true, //새 버전엔 기본적으로 되어 있지만 해두는게 좋다
+  useFindAndModify: false,
+});
 
 const db = mongoose.connection;
 

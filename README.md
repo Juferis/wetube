@@ -1,14 +1,6 @@
 # WeTube
 
 Cloning Youtube with VanillaJS and NodeJS
+유튜브를 바닐라JS와 NodeJS를 이용하여 클론 코딩 했습니다.
 
-- [x] Home
-- [x] Join
-- [x] Login
-- [x] Search
-- [ ] User Detail
-- [x] Edit Profile
-- [x] Change Password
-- [x] Upload
-- [ ] Video Detail
-- [x] Video Edit
+WeTube Url : https://intense-hollows-79633.herokuapp.com/

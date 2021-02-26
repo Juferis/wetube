@@ -30,6 +30,16 @@
           margin-right: 15px;
         }
       }
+      a {
+        display: flex;
+        align-items: center;
+      }
+      span {
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+        margin-left: 10px;
+      }
       form {
         width: 100%;
         input {

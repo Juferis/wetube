@@ -1,6 +1,10 @@
 import passport from "passport";
 import GithubStrategy from "passport-github";
-import { githubLoginCallback } from "./controllers/userController";
+import KakaoStrategy from "passport-kakao";
+import {
+  githubLoginCallback,
+  kakaoLoginCallback,
+} from "./controllers/userController";
 import User from "./models/User";
 import routes from "./routes";
 
@@ -11,9 +15,19 @@ passport.use(
     {
       clientID: process.env.GH_ID,
       clientSecret: process.env.GH_SECRET,
-      callbackURL: `http://localhost:4000${routes.githubCallback}`,
+      callbackURL: `https://intense-hollows-79633.herokuapp.com${routes.githubCallback}`,
     },
     githubLoginCallback
+  )
+);
+passport.use(
+  new KakaoStrategy(
+    {
+      clientID: process.env.KAKAO_ID,
+      clientSecret: process.env.KAKAO_SECRET,
+      callbackURL: `https://intense-hollows-79633.herokuapp.com//auth${routes.kakaoCallback}`,
+    },
+    kakaoLoginCallback
   )
 );
 

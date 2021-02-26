@@ -54,6 +54,11 @@
         padding: 15px;
         border-radius: 20px;
         border-bottom-left-radius: 0px;
+        #jsCommentDelete {
+          width: 25px;
+          height: 25px;
+          margin-left: 10px;
+        }
         &:not(:last-child) {
           margin-bottom: 15px;
         }
