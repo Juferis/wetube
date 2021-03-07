@@ -1,5 +1,5 @@
 # WeTube
-> NodeJS와 Express를 이용해 MongoDB Atlas에 배포한 멀티미디어 홈페이지  
+> NodeJS와 Express를 이용해 Heroku에 배포한 멀티미디어 홈페이지  
 >WeTube Url : https://intense-hollows-79633.herokuapp.com/
 
 </br>
@@ -23,3 +23,4 @@
 ## 핵심기능
 - 비디오 Create Read Update Delete 기능
 - 카카오 계정 및 깃헙 계정으로 회원가입 가능
+- 각종 데이터들을 MongoDB Atlas에 저장
