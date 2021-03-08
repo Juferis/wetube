@@ -19,6 +19,7 @@
 - Multer 1.4.2
 
 ## ERD 설계
+![img](./WeTube_ERD.jpg)
 
 ## 핵심기능
 - 비디오 Create Read Update Delete 기능
