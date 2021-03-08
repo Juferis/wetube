@@ -1,6 +1,26 @@
 # WeTube
+> NodeJS와 Express를 이용해 Heroku에 배포한 멀티미디어 홈페이지  
+>WeTube Url : https://intense-hollows-79633.herokuapp.com/
 
-Cloning Youtube with VanillaJS and NodeJS
-유튜브를 바닐라JS와 NodeJS를 이용하여 클론 코딩 했습니다.
+</br>
 
-WeTube Url : https://intense-hollows-79633.herokuapp.com/
+## 사용기술
+- JS
+- pug 3.0.0
+- NodeJS 12.20.1
+- SCSS
+- ES6
+- Express 4.17.1
+- Babel 7
+- Passport 0.4.1
+- Webpack 5.21.2
+- MongoDB 3.6.3
+- Mongoose 5.11.14
+- Multer 1.4.2
+
+## ERD 설계
+
+## 핵심기능
+- 비디오 Create Read Update Delete 기능
+- 카카오 계정 및 깃헙 계정으로 회원가입 가능
+- 각종 데이터들을 MongoDB Atlas에 저장
