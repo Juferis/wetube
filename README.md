@@ -20,6 +20,9 @@
 
 ## ERD 설계
 ![img](./WeTube_ERD.jpg)
+- User는 DB에 저장되며 사용자 이름과 e-mail을 필수로 합니다.
+- video는 User 스키마 안에 있는 videos 배열에 저장되며 사용자 정보로 누구의 게시물인지 확인합니다.
+- comment는 Video 스키마 안에 있는 comments 배열에 저장되며 사용자 정보로 누구의 댓글인지 확인합니다.
 
 ## 핵심기능
 - 비디오 Create Read Update Delete 기능
