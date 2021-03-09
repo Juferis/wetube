@@ -24,4 +24,4 @@
 ## 핵심기능
 - 비디오 Create Read Update Delete 기능
 - 카카오 계정 및 깃헙 계정으로 회원가입 가능
-- 각종 데이터들을 MongoDB Atlas에 저장
+- 각종 데이터를 MongoDB Atlas에 저장
