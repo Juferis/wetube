@@ -29,4 +29,4 @@
 - 비디오 Create Read Update Delete 기능
 - 카카오 계정 및 깃헙 계정으로 회원가입 가능
 - 각종 데이터를 MongoDB Atlas에 저장
-- Amazon S3에 업로드 영상 저장
+- Amazon S3에 업로드 영상 및 프로필 사진 저장
