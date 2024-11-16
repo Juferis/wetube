@@ -1,6 +1,5 @@
 # WeTube
-> NodeJS와 Express를 이용해 Heroku에 배포한 멀티미디어 홈페이지  
->WeTube Url : https://intense-hollows-79633.herokuapp.com/
+> NodeJS와 Express를 이용한 멀티미디어 홈페이지  
 
 </br>
 
